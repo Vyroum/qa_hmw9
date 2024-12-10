@@ -9,6 +9,7 @@ class PracticeFormPage:
         self.email = browser.element('[id="userEmail"]')
         self.user_number = browser.element('[id="userNumber"]')
         self.address = browser.element('[id="currentAddress"]')
+        self.subject = browser.element("#subjectsInput")
 
     def open(self):
         browser.open('/automation-practice-form')
@@ -36,6 +37,9 @@ class PracticeFormPage:
         browser.element("[class='react-datepicker__month-select']").click().element(by.text(f"{month}")).click()
         browser.element(by.text(f"{day}")).click()
 
+    def fill_subject(self, value):
+        self.subject.type(value).press_enter()
+
     def choose_interest_sport(self):
         browser.element(by.text("Sports")).click()
 
@@ -58,3 +62,20 @@ class PracticeFormPage:
 
     def fill_address(self, value):
         self.address.type(value)
+
+    def should_registered_user_with(self,  email, *tbd):
+
+        browser.element('.table').all('td').even.should(
+            have.exact_texts(
+                full_name,
+                email,
+                'Female',
+                '1234567891',
+                '11 May,1999',
+                'Computer Science',
+                'Reading',
+                'foto.jpg',
+                'Moscowskaya Street 18',
+                'NCR Delhi',
+            )
+        )
