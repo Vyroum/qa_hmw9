@@ -19,6 +19,7 @@ def test_practice_form():
     practice_form_page.choose_interest_music()
     practice_form_page.choose_interest_reading()
     practice_form_page.upload_picture("image.jpg")
+    practice_form_page.fill_address("City Name, Street Name")
     practice_form_page.choose_state("NCR")
     practice_form_page.choose_city("Noida")
     practice_form_page.submit_button()

@@ -26,7 +26,7 @@ class PracticeFormPage:
         self.email.type(value)
 
     def select_gender(self, value):
-        self.user_gender = browser.element(by.text(value))
+        browser.element(by.text(value)).click()
 
     def fill_user_number(self, value):
         self.user_number.type(value)
