@@ -63,19 +63,22 @@ class PracticeFormPage:
     def fill_address(self, value):
         self.address.type(value)
 
-    def should_registered_user_with(self,  email, *tbd):
+    def submit_button(self):
+        browser.element('[id="submit"]').click()
+
+    def should_registered_user_with(self, full_name, email, gender, user_number, birthdate, subjects, hobby, file, address, location):
 
         browser.element('.table').all('td').even.should(
             have.exact_texts(
                 full_name,
                 email,
-                'Female',
-                '1234567891',
-                '11 May,1999',
-                'Computer Science',
-                'Reading',
-                'foto.jpg',
-                'Moscowskaya Street 18',
-                'NCR Delhi',
+                gender,
+                user_number,
+                birthdate,
+                subjects,
+                hobby,
+                file,
+                address,
+                location,
             )
         )

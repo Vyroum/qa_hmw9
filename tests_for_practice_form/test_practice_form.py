@@ -21,15 +21,19 @@ def test_practice_form():
     practice_form_page.upload_picture("image.jpg")
     practice_form_page.choose_state("NCR")
     practice_form_page.choose_city("Noida")
+    practice_form_page.submit_button()
 
-    browser.element('[id="submit"]').click()
-    browser.element(".modal-body").should(have.text("Andrei Monichev"))
-    browser.element(".modal-body").should(have.text("testmail@test.ru"))
-    browser.element(".modal-body").should(have.text("Male"))
-    browser.element(".modal-body").should(have.text("1231231234"))
-    browser.element(".modal-body").should(have.text("13 September,1995"))
-    browser.element(".modal-body").should(have.text("Maths"))
-    browser.element(".modal-body").should(have.text("Sports, Music, Reading"))
-    browser.element(".modal-body").should(have.text("image.jpg"))
-    browser.element(".modal-body").should(have.text("City Name, Street Name"))
-    browser.element(".modal-body").should(have.text("NCR Noida"))
+    practice_form_page.should_registered_user_with(
+        "Andrei Monichev",
+        "testmail@test.ru",
+        "Male",
+        "1231231234",
+        "13 September,1995",
+        "Maths",
+        "Sports, Music, Reading",
+        "image.jpg",
+        "City Name, Street Name",
+        "NCR Noida"
+    )
+
+
