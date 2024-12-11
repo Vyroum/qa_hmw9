@@ -45,7 +45,8 @@ class PracticeFormPage:
         user_number = user.user_number
         birthdate = user.birthday_date.get("day") + " " + user.birthday_date.get("month") + "," + user.birthday_date.get("year")
         subjects = user.subject
-       # hobby_dict = user.hobbies
+        checked_hobby = [key for key, value in user.hobbies.items() if value is True]
+        hobby = ", ".join(checked_hobby)
         file = user.file
         address = user.address
         location = user.state + " " + user.city
@@ -57,7 +58,7 @@ class PracticeFormPage:
                 user_number,
                 birthdate,
                 subjects,
-                # hobby,
+                hobby,
                 file,
                 address,
                 location,
