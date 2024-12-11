@@ -2,7 +2,7 @@ import os
 
 from selene import browser, have
 
-from Pages.practice_form_page import PracticeFormPage
+from pages.practice_form_page import PracticeFormPage
 
 
 def test_practice_form():
@@ -36,5 +36,3 @@ def test_practice_form():
         "City Name, Street Name",
         "NCR Noida"
     )
-
-
