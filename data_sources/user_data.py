@@ -10,7 +10,7 @@ class User:
     user_number: str
     birthday_date: dict[str]
     subject: str
-    hobbies: str
+    hobbies: dict[str:bool]
     file: str
     address: str
     state: str
@@ -25,7 +25,7 @@ user_for_registration = User(
     user_number="1231231234",
     birthday_date={'year': '1995', 'month': 'September', 'day': '13'},
     subject="Maths",
-    hobbies="Reading",
+    hobbies={"Sports": True, "Reading": True, "Music": True},
     file="image.jpg",
     address="City Name, Street Name",
     state="NCR",
