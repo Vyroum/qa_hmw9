@@ -1,7 +1,3 @@
-import os
-
-from selene import browser, have
-
 from pages.practice_form_page import PracticeFormPage
 
 
