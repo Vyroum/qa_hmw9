@@ -8,5 +8,3 @@ def test_practice_form():
     practice_form_page.open_browser()
     practice_form_page.register_user(user_for_registration)
     practice_form_page.should_registered_user_with(user_for_registration)
-
-

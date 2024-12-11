@@ -10,7 +10,7 @@ class PracticeFormPage:
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 
-    def register_user(self, value: User ):
+    def register_user(self, value: User):
         browser.element('[id="firstName"]').type(value.first_name),
         browser.element('[id="lastName"]').type(value.last_name)
         browser.element('[id="userEmail"]').type(value.email)
@@ -43,7 +43,8 @@ class PracticeFormPage:
         email = user.email
         gender = user.gender
         user_number = user.user_number
-        birthdate = user.birthday_date.get("day") + " " + user.birthday_date.get("month") + "," + user.birthday_date.get("year")
+        birthdate = user.birthday_date.get("day") + " " + user.birthday_date.get(
+            "month") + "," + user.birthday_date.get("year")
         subjects = user.subject
         checked_hobby = [key for key, value in user.hobbies.items() if value is True]
         hobby = ", ".join(checked_hobby)
